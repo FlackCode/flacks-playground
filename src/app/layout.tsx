@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { Press_Start_2P } from "next/font/google"
+import Navbar from "./components/NavBar";
 
 const pressStart = Press_Start_2P({
   subsets:['latin'],
@@ -21,9 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased ${pressStart.className}`}
+        className={`antialiased ${pressStart.className} flex flex-col h-screen`}
       >
-        {children}
+        <Navbar />
+        <main className="flex-1">{children}</main>
       </body>
     </html>
   );
